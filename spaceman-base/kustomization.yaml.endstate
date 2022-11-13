@@ -11,3 +11,16 @@ commonLabels:
 
 commonAnnotations:
   support: '+491234567'
+
+patchesJson6902:
+- target:
+    version: v1
+    kind: Service
+    name: spaceman
+  path: cluster-ip.json
+
+configMapGenerator:
+- name: spaceman
+  behavior: merge
+  files:
+  - config-files/health.conf
